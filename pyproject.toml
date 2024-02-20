@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "poetry-pyrightconfig"
+version = "0.1.0"
+description = ""
+authors = ["Dominic Price <dominicprice@outlook.com>"]
+readme = "README.md"
+packages = [{include = "poetry_pyrightconfig", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+poetry = "^1.7.1"
+
+[tool.poetry.plugins."poetry.application.plugin"]
+pyrightconfig = "poetry_pyrightconfig.plugin:PyrightConfigPlugin"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
